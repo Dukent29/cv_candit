@@ -176,3 +176,30 @@ ul {
         padding: 1rem;
     }
 }
+/* Add animation for big titles */
+@keyframes slideFromTop {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.title-animation {
+    animation: slideFromTop 1s ease-in-out;
+    opacity: 0;
+    transform: translateY(-100%);
+    animation-fill-mode: forwards;
+}
+
+/* Add delay for different titles if needed */
+.title-animation:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.title-animation:nth-child(3) {
+    animation-delay: 1s;
+}
