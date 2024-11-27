@@ -57,6 +57,20 @@ body {
     font-size: 0.9rem;
 }
 
+.contact-link {
+    color: rgb(193, 207, 231); /* Matches theme color */
+    text-decoration: none; /* Removes underline */
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+
+.contact-link:hover {
+    color: white; /* Changes to primary color on hover */
+    text-decoration: underline; /* Adds underline on hover */
+    font-weight: bold;
+}
+
 .tech-stack {
     display: grid;
     gap: 1rem;
@@ -75,15 +89,108 @@ body {
     border-radius: 15px;
     font-size: 0.85rem;
     display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-label:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tech-label::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+}
+
+.tech-label:hover::before {
+    width: 200%;
+    height: 200%;
 }
 
 .qualites ul, .langues ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
+
 .qualites li, .langues li {
-    margin-bottom: 0.5rem;
+    background-color: rgba(59, 142, 222, 0.2); /* Subtle background */
+    color: var(--sidebar-text); /* Text color matching sidebar */
+    padding: 0.5rem 1rem;
+    border-radius: 8px; /* Slightly rounded corners */
     font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(59, 142, 222, 0.4); /* Add a subtle border */
+}
+
+.qualites li:hover, .langues li:hover {
+    background-color: var(--secondary-color); /* Changes to primary color on hover */
+    color: white;
+    transform: translateY(-5px); /* Slight lift */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds shadow */
+}
+
+.qualites li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3); /* Highlight effect */
+    transition: width 0.4s ease-in-out;
+    z-index: 0;
+}
+.langues li::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3); /* Highlight effect */
+    transition: width 0.4s ease-in-out;
+    z-index: 0;
+}
+
+.qualites li:hover::before {
+    width: 100%; /* Expands the highlight effect */
+}
+.langues li:hover::before {
+    width: 100%; /* Expands the highlight effect */
+}
+
+/* Text stays on top of animations */
+.qualites li span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Subtle Glow Effect */
+.qualites li:hover span {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
 }
 
 /* Main Content Styles */
@@ -157,9 +264,7 @@ section {
     font-size: 0.9rem;
 }
 
-ul {
-    padding-left: 1.5rem;
-}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
