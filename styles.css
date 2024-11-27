@@ -1,0 +1,178 @@
+:root {
+    --primary-color: #1B2838;
+    --secondary-color: #3B8EDE;
+    --text-color: #333;
+    --sidebar-bg: #1B2838;
+    --sidebar-text: #ffffff;
+    --label-bg: #3B8EDE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    background: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 300px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 2rem;
+}
+
+.sidebar h2 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-info {
+    margin-bottom: 2rem;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.tech-stack {
+    display: grid;
+    gap: 1rem;
+}
+
+.tech-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-label {
+    background-color: rgba(59, 142, 222, 0.2);
+    color: var(--sidebar-text);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    display: inline-block;
+}
+
+.qualites ul, .langues ul {
+    list-style: none;
+}
+
+.qualites li, .langues li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+.name {
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.firstname {
+    color: var(--secondary-color);
+    font-size: 2rem;
+}
+
+.title {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+.main-content h2 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-label {
+    display: inline-block;
+    background-color: var(--label-bg);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.experience-item, .formation-item {
+    margin-bottom: 1.5rem;
+}
+
+.experience-item h3, .formation-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.duration {
+    color: var(--secondary-color);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .main-content {
+        padding: 1rem;
+    }
+}
