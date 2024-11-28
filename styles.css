@@ -308,3 +308,20 @@ section {
 .title-animation:nth-child(3) {
     animation-delay: 1s;
 }
+/* Default hidden state for animations */
+[data-animate] {
+    opacity: 0;
+    transform: translateX(-50px); /* Initial position */
+    transition: all 0.5s ease-in-out;
+}
+
+/* Slide-in from the left */
+[data-animate].visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+[data-animate] {
+    transition-delay: calc(var(--delay, 0) * 0.2s);
+}
+
