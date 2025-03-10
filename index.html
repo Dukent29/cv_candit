@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MULINDA KEVIN BRUCE - CV</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="google_translate_element"></div>
     <div class="container">
         <aside class="sidebar">
             <section class="contact" data-animate="slide-left">
@@ -134,40 +135,6 @@
         </main>
     </div>
 </body>
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        const titles = document.querySelectorAll(".title-animation");
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-                }
-            });
-        });
-
-        titles.forEach((title) => {
-            observer.observe(title);
-        });
-    });
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const elements = document.querySelectorAll("[data-animate]");
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                        observer.unobserve(entry.target); // Stop observing after animation
-                    }
-                });
-            },
-            { threshold: 0.1 } // Trigger when 10% of the element is visible
-        );
-
-        elements.forEach((el) => observer.observe(el));
-    });
-</script>
+<script src="assets/js/javascript.js"></script>
 
 </html>
